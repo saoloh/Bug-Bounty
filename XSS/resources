@@ -1,0 +1,19 @@
+Cross-site scripting (XSS) is a web security vulnerability that allows an attacker to compromise user interactions with a vulnerable application by injecting malicious JavaScript. This can enable the attacker to masquerade as the victim user, perform actions on their behalf, access their data, and potentially gain full control over the application if the victim has privileged access.[1]
+
+XSS works by manipulating a website to return malicious JavaScript to users, which then executes in the victim's browser.[1]
+
+There are three main types of XSS attacks:
+*   **Reflected XSS:** The malicious script originates from the current HTTP request and is reflected in the immediate response.[1]
+*   **Stored XSS (Persistent XSS):** The malicious script is stored on the website's database (e.g., in comments or user profiles) and is served to other users.[1]
+*   **DOM-based XSS:** The vulnerability lies in client-side JavaScript that processes data from an untrusted source in an unsafe way, typically by writing it back to the DOM.[1]
+
+Attackers can use XSS to steal cookies, capture passwords, perform CSRF attacks, impersonate users, access user data, and inject trojan functionality.[1] The impact of an XSS attack varies depending on the application's nature, functionality, data, and the compromised user's privileges.[1]
+
+To prevent XSS attacks, a combination of measures is recommended:
+*   **Filter input on arrival:** Strictly filter user input based on expected or valid input.[1]
+*   **Encode data on output:** Encode user-controllable data when it's output in HTTP responses to prevent it from being interpreted as active content. This may involve HTML, URL, JavaScript, and CSS encoding.[1]
+*   **Use appropriate response headers:** Utilize `Content-Type` and `X-Content-Type-Options` headers to ensure browsers interpret responses as intended, especially for responses not meant to contain HTML or JavaScript.[1]
+*   **Content Security Policy (CSP):** Implement CSP as a last line of defense to reduce the severity of any XSS vulnerabilities that might still occur.[1]
+
+Sources:
+[1] What is cross-site scripting (XSS) and how to prevent it? | Web ... (https://portswigger.net/web-security/cross-site-scripting#what-is-cross-site-scripting-xss)
