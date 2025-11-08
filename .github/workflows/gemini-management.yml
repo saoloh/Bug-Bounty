@@ -1,0 +1,23 @@
+name: Gemini CLI Management
+
+on:
+  # Define when this workflow runs (e.g., on pull requests, pushes, or manually)
+  pull_request:
+    types: [opened, synchronize] 
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  run_gemini_cli:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # This is the key step that runs the CLI inside the repo
+      - name: Run Gemini CLI for PR review
+        uses: google-gemini/run-gemini-cli@v1
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
+        with:
+          # Example: Use the CLI to generate a summary for a PR
+          command: 'pr --generate-summary'
