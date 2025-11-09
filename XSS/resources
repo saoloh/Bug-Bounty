@@ -18,3 +18,8 @@ To prevent XSS attacks, a combination of measures is recommended:
 Sources:
 [1] What is cross-site scripting (XSS) and how to prevent it? | Web ... (https://portswigger.net/web-security/cross-site-scripting#what-is-cross-site-scripting-xss)
 [2] https://www.youtube.com/watch?v=JZgqsijAa-s
+[3] Real world bug hunting - section 7- CROSS-SITE SCRIPTING 
+[4] Bug Bounty Bootcamp section 6- CROSS-SITE SCRIPTING
+[6] Web Hacker application Handbook section 13-Attacking Users: 
+Cross-Site Scripting
+[7] hacking 101 section 5-HTMl injection 10-cross site scripting attacks
