@@ -10,8 +10,11 @@
     {{firstName}}
     {{1+1}}
     <!-- {{ $eval.constructor('alert(1)')() }} -->
+    
 </body>
 <script>
+
+Function("alert('')")();
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope){
         $scope.firstName = 'salah';
