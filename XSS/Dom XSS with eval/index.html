@@ -6,6 +6,26 @@
     <title>eval with xss</title>
 </head>
 <body>
-    
+    <h1>Eval</h1>
+    <p id="page"></p>
+
 </body>
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    var url = 'http://localhost:5500/data.json';
+
+    xmlhttp.onreadystatechange = function(){
+        if(thisj.readyState ==4 && this.status == 200){
+            console.log(this.response);
+            // let myObj = JSON.parse(this.response);  
+
+            eval('let myObj = ' + this.response); //this part is vun because eval excutes javascript object 
+            // and javascript object can have a function as a value
+            document.getElementById('page').innerHTML = myObj.information
+        }
+    }
+
+    xmlhttp.open("Get",url,true);
+    xmlhttp.send();
+</script>
 </html>

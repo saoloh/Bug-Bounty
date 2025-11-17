@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SON Storage Example</title>
+</head>
+<body>
+    <h1>stored DOM based XSS</h1>
+    <form  id="dataForm">
+        <input type="text" placeholder="Type something..." id="comment">
+        <button type="submit">submit</button>
+        <hr>
+
+        <h2>Stored Data</h2>
+    <ul id="dataList">
+        </ul>
+    <button onclick="fetchData()">Refresh Data</button>
+    </form>
+
+    <script>
+        const inputElement = document.getElementById("comment");
+        const listElement = document.getElementById('dataList');
+
+        async function saveData() {
+            const inputValue = inputElement.value.trim();
+
+            const response = await fetch('/save-input', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ entry: inputValue, time: new Date().toLocaleString() })
+            });
+        }
+
+        // --- 2. Fetch Data Function (GET) ---
+        async function fetchData() {
+            const response = await fetch('/get-data');
+            const data = await response.json();
+
+            listElement.innerHTML = ''; // Clear existing list
+
+            data.forEach(item => {
+                const li = document.createElement('li');
+                // Use .textContent for safety and simplicity
+                li.textContent = `${item.entry} (${item.time})`; 
+                listElement.appendChild(li);
+            });
+        }
+
+        // Load data automatically when the page loads
+        fetchData();
+        </script>
+
+</body>
+</html>
