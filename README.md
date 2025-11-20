@@ -6,3 +6,4 @@ This repository contains my personal notes, resources, and projects related to c
 
 *   [XSS](./XSS)
 *   [Tips & Resources](./Tips%20&%20Resources)
+*   [SCRIPTS](./SCRIPTS)
