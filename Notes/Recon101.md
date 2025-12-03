@@ -26,18 +26,18 @@ curl -s "https://crt.sh/?q=%25.[WEBSITE_DOMAIN]&output=json" \
 --- 
 
 ### third way
-
-- just use tools like `subfinder -h` and `dnsx -h`
-
----
-
-## fourth way -fav icon-
-
 1. go to `favicon-hash-kmsec.uk`
 2. give it a domain of microsoft that contains the `fav-icon` click hash from URL
 3. take the `favicon_hash` and search shodan
     - take into your account that this gives you all the sites that have the icon and it may be a company that is using hte comapny service 
     - so you have to specify the domain you are searching for `org:"comany name"` EX:- microsoft will be `microsoft limited`
+
+---
+
+## fourth way -fav icon-
+
+- just use tools like `subfinder -h` and `dnsx -h`
+
 
 ---
 
@@ -149,3 +149,4 @@ The recommended way to learn recon involves three stages: watching videos, readi
 *   Specific tools mentioned include **Subfinder**, **Assetfinder**, and **massdns** for sub-domain enumeration, and using **W S L** (Windows Subsystem for Linux) for setting up the environment.
 
 Understanding recon is like **studying a map before a treasure hunt**: you need to know the entire territory—the forests, the hidden caves, the main roads (Large Scope), or maybe just a specific clearing where the map says X marks the spot (Small Scope). While modern technology allows for automated aerial scans (automation), relying solely on them means you might miss the subtle clues, footprints, or weak points only visible when you manually walk the terrain (manual testing).
+---
